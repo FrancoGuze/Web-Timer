@@ -35,9 +35,8 @@ function App() {
       id = setInterval(() => {
         swap ? setTiempoEstudio((prevTime) => prevTime + 1) : setTiempoOtros((prevTime) => prevTime + 1)
         
-      }, 100) 
-      console.log('id: ', id)
-      console.log(calcSeconds(tiempoEstudio),tiempoEstudio)
+      }, 1000) 
+  
     }
     else {
       clearInterval(id);
@@ -50,7 +49,7 @@ function App() {
   const changeSwap = () => {
     setSwap(!swap)
 
-    console.log(swap)
+   
   }
   const calcHours = (val: number) => Math.floor((val / 60) / 60)
   const calcMinutes = (val: number) => Math.floor(val / 60)
