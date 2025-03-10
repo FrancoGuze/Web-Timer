@@ -52,7 +52,7 @@ function App() {
    
   }
   const calcHours = (val: number) => Math.floor((val / 60) / 60)
-  const calcMinutes = (val: number) => Math.floor(val / 60)
+  const calcMinutes = (val: number) => Math.floor(val / 60) %60
 const calcSeconds = (val:number) => val % 60
   const formatTime = (val: number) => {
     return ('0' + val).slice(-2)
