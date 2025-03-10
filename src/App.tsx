@@ -34,8 +34,10 @@ function App() {
     if (running) {
       id = setInterval(() => {
         swap ? setTiempoEstudio((prevTime) => prevTime + 1) : setTiempoOtros((prevTime) => prevTime + 1)
-      }, 1000) 
+        
+      }, 100) 
       console.log('id: ', id)
+      console.log(calcSeconds(tiempoEstudio),tiempoEstudio)
     }
     else {
       clearInterval(id);
@@ -52,7 +54,7 @@ function App() {
   }
   const calcHours = (val: number) => Math.floor((val / 60) / 60)
   const calcMinutes = (val: number) => Math.floor(val / 60)
-
+const calcSeconds = (val:number) => val % 60
   const formatTime = (val: number) => {
     return ('0' + val).slice(-2)
   }
@@ -61,13 +63,13 @@ function App() {
     <>
       <div className="study area">
         <h1>Estudio</h1>
-        <h2>{calcHours(tiempoEstudio)}:{formatTime(calcMinutes(tiempoEstudio))}:{formatTime(tiempoEstudio)}</h2>
+        <h2>{calcHours(tiempoEstudio)}:{formatTime(calcMinutes(tiempoEstudio))}:{formatTime(calcSeconds(tiempoEstudio))}</h2>
         <Button side='study'>Start</Button>
 
       </div>
       <div className="other area">
         <h1>Otros</h1>
-        <h2>{calcHours(tiempoOtros)}:{formatTime(calcMinutes(tiempoOtros))}:{formatTime(tiempoOtros)}</h2>
+        <h2>{calcHours(tiempoOtros)}:{formatTime(calcMinutes(tiempoOtros))}:{formatTime(calcSeconds(tiempoOtros))}</h2>
         <Button side='other'>Start</Button>
       </div>
       <div className='buttons'>
