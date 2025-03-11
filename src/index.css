@@ -29,30 +29,47 @@
    align-items: center;
    padding-top: 40px;
 
-   button{
-    margin-top: 90px;
-    z-index: 100;
+   button {
+     margin-top: 90px;
+     z-index: 100;
    }
 
  }
-.study{
-  background-color: #17215e;
-}
-.other{
-  background-color: #5e3517;
-}
-.buttons{
-  position: absolute;
-  
-width: 100%;
-padding-top: 90px;
-height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 5px;
-}
+
+ .study {
+   background-color: #17215e;
+ }
+
+ .other {
+   background-color: #5e3517;
+ }
+
+ .total {
+   position: absolute;
+   top: 0;
+   left: 50%;
+   transform: translateX(-50%);
+   padding: 5px 9px;
+   border-radius: 0 0 8px 8px;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   background-color: rgba(0, 0, 0, 0.475);
+ }
+
+ .buttons {
+   position: absolute;
+
+   width: 100%;
+   padding-top: 90px;
+   height: 100%;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   gap: 5px;
+ }
+
  button {
    border-radius: 8px;
    border: 1px solid transparent;
@@ -72,4 +89,12 @@ height: 100%;
  button:focus,
  button:focus-visible {
    outline: 4px auto -webkit-focus-ring-color;
+ }
+
+ .show {
+   visibility: visible;
+ }
+
+ .hide {
+   visibility: hidden;
  }
